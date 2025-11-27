@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini-Game Screen</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen min-h-screen w-full flex-col group/design-root overflow-hidden">
+<!-- Initial Game State -->
+<div class="absolute inset-0 z-20 flex flex-col items-center justify-center bg-background-dark/80 backdrop-blur-sm p-4">
+<div class="flex flex-col items-center gap-6 w-full max-w-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-contain rounded-lg w-full max-w-[240px]" data-alt="Stylized geometric shapes in pastel colors floating" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCa7MwNS9yM6HlpIkzZLHHSO2MQsWe3TF_lgyGoyZ0vAowtAlXsbLALbma0nnhdR34PK97aPFmBKNI8KBb_31tkXT1_Ee5M_io8eallRy_ZYJ9_Qh-QdQre52172fUDbZjO8a86q33vhFOChISWigR3pDtEJrqxZFtMHBKIGkGsQDHtD179TuvmoYBmbP7dMagJxFm4dvawwFiUxi597-4kycWtYdVgBYpxOBLNb1B6IruaHABQjlj8DvdZGjhsmM5t3-_fbPNt5tM");'></div>
+<div class="flex max-w-[480px] flex-col items-center gap-2">
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em] text-center">Tap the matching shapes!</p>
+<p class="text-white/80 text-base font-normal leading-normal text-center">A simple and fun game to give your brain a short break.</p>
+</div>
+<button class="flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Start Game</span>
+</button>
+</div>
+</div>
+<!-- Main Game UI -->
+<div class="relative flex flex-col flex-1 h-full">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start text-primary">
+<span class="material-symbols-outlined !text-3xl">timer</span>
+<span class="text-white text-lg font-bold leading-tight tracking-[-0.015em] ml-1">0:45</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Score: 120</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 bg-transparent text-white/80 hover:text-white gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined !text-3xl">pause</span>
+</button>
+</div>
+</div>
+<!-- Game Canvas -->
+<div class="flex-1 flex flex-col items-center justify-center p-4">
+<div class="grid grid-cols-3 gap-4 w-full max-w-sm">
+<!-- Example game elements -->
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#F5B7B1] rounded-full"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#A8D8C7]" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#EAF2F8] rotate-45"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#A8D8C7]" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#F5B7B1] rounded-full"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#EAF2F8] rotate-45"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#EAF2F8] rotate-45"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#A8D8C7]" style="clip-path: polygon(50% 0%, 0% 100%, 100% 100%);"></div>
+</div>
+<div class="aspect-square flex items-center justify-center bg-primary/20 rounded-xl cursor-pointer hover:bg-primary/40 transition-colors">
+<div class="w-16 h-16 bg-[#F5B7B1] rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Footer Action Button -->
+<div class="flex px-4 py-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">End Game &amp; Return</span>
+</button>
+</div>
+<!-- Game Over Modal -->
+<div class="absolute inset-0 z-10 hidden flex-col items-center justify-center bg-background-dark/80 backdrop-blur-sm p-4">
+<div class="flex flex-col items-center gap-6 rounded-xl bg-background-dark p-6 w-full max-w-sm border border-white/10">
+<div class="flex flex-col items-center gap-2">
+<p class="text-primary text-xl font-bold leading-tight tracking-[-0.015em] text-center">Great Break!</p>
+<p class="text-white/80 text-sm font-normal leading-normal text-center">Nice job! Ready to get back to it?</p>
+</div>
+<div class="flex flex-col gap-4 text-center w-full">
+<div class="rounded-lg bg-primary/20 p-4">
+<p class="text-white/60 text-xs font-normal uppercase tracking-widest">Your Score</p>
+<p class="text-white text-4xl font-bold tracking-tighter">1500</p>
+</div>
+<div class="rounded-lg bg-primary/20 p-4">
+<p class="text-white/60 text-xs font-normal uppercase tracking-widest">High Score</p>
+<p class="text-white text-2xl font-bold tracking-tighter">2100</p>
+</div>
+</div>
+<div class="flex flex-col gap-3 w-full">
+<button class="flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/30 text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Play Again</span>
+</button>
+<button class="flex min-w-[84px] w-full max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-background-dark text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Back to My Routine</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body></html>
