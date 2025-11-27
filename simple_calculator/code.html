@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Calculator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#13ec5b",
+              "background-light": "#f6f8f6",
+              "background-dark": "#102216",
+            },
+            fontFamily: {
+              "display": ["Lexend", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-screen min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center p-4">
+<button class="flex size-10 shrink-0 items-center justify-center text-slate-700 dark:text-white">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center text-slate-900 dark:text-white pr-10">Calculator</h2>
+</div>
+<!-- Display Area -->
+<div class="flex flex-col flex-1 justify-end items-end px-6 pb-4">
+<p class="text-slate-500 dark:text-slate-400 text-lg font-normal leading-normal">52 + 8</p>
+<h1 class="text-slate-900 dark:text-white tracking-tight text-6xl font-bold leading-tight text-right">60</h1>
+</div>
+<div class="w-full border-t border-slate-200 dark:border-white/10 my-4"></div>
+<!-- Button Grid -->
+<div class="grid grid-cols-4 gap-4 px-4 pb-8 pt-2">
+<!-- Row 1 -->
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-200 dark:bg-primary/20 text-slate-900 dark:text-primary text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">AC</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-200 dark:bg-primary/20 text-slate-900 dark:text-primary text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">+/-</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-200 dark:bg-primary/20 text-slate-900 dark:text-primary text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">%</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-primary text-background-dark text-3xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">÷</span>
+</button>
+<!-- Row 2 -->
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">7</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">8</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">9</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-primary text-background-dark text-3xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">×</span>
+</button>
+<!-- Row 3 -->
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">4</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">5</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">6</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-primary text-background-dark text-3xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">-</span>
+</button>
+<!-- Row 4 -->
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">1</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">2</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">3</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-primary text-background-dark text-3xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">+</span>
+</button>
+<!-- Row 5 -->
+<button class="col-span-2 flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">0</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-slate-100 dark:bg-white/5 text-slate-900 dark:text-white text-2xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">.</span>
+</button>
+<button class="flex items-center justify-center overflow-hidden rounded-xl h-20 bg-primary text-background-dark text-3xl font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">=</span>
+</button>
+</div>
+</div>
+</body></html>
